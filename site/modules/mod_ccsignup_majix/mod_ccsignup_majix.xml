@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5.0"
+	client="site"
+	method="upgrade">
+    <name>Constant Contact Signup Majix</name>
+	<author>Joomladds @ River Media</author>
+	<creationDate>July 2015</creationDate>
+	<copyright>Copyright (C) 2013 - 2015 River Media. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@joomladds.com</authorEmail>
+	<authorUrl>http://joomladds.com</authorUrl>
+    <version>1.3.3</version>
+    <description>MOD_CCSIGNUPMAJIX_XML_DESCRIPTION</description>
+    <files>
+      <filename module="mod_ccsignup_majix">mod_ccsignup_majix.php</filename>
+      <filename>index.html</filename>
+      <filename>helper.php</filename>
+      <folder>tmpl</folder>
+      <folder>assets</folder>
+      <folder>fields</folder>
+    </files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_ccsignup_majix.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_ccsignup_majix.sys.ini</language>
+	</languages>
+    <config>
+		<fields
+			name="params">
+			<fieldset
+				name="NEED1" label="COM_MODULES_NEED1_FIELDSET_LABEL" addfieldpath="/modules/mod_ccsignup_majix/fields">
+				<field
+					name="ccid"
+					size="40"
+					type="text"
+					default=""
+					label="Constant Contact ID"
+					description="The account client ID provided by Constant Contact (not your username)"
+					required="1" />
+				<field
+					name="show_safesubscribe"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="Show SafeSubscribe"
+					description="Enable if you would like to show the 'SafeSubscribe' Image.">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="show_newsletters"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="Show Newsletter Text"
+					description="Enable if you would like to show the text 'For Email Newsletters you can trust'.">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="referralLink"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="Show Referral Link"
+					description="Choose if you want to show the referral link for Constant Contact so that the Developer will receive credit for referrals.">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset
+				name="NEED2" label="COM_MODULES_NEED2_FIELDSET_LABEL">
+				<field name="label_fontsize" type="list" default="12px" label="Label Font Size" description="Choose label font size">
+					<option value="10px">Small</option>
+					<option value="12px">Medium</option>
+					<option value="14px">Large</option>
+				</field>
+				<field name="label_fontweight" type="list" default="normal" label="Label Font Weight" description="Choose label font weight (make bold).">
+					<option value="normal">Normal</option>
+					<option value="bold">Bold</option>
+				</field>
+				<field name="label_fontcolor" type="color" default="#000000" label="Label Text Color" description="Select the color for the field label text color." />		
+				<field name="label_fontfamily" type="GoogleFonts" default="Arial, Helvetica, sans-serif" label="Label Font" description="Select the label font">
+					<option value="font1">font1</option>
+				</field>
+				<field
+					name="mod_desc_style"
+					type="list"
+					default="span"
+					label="Module Description Style"
+					description="How do you want the description to be displayed (html tags).">
+					<option value="span">
+						Default &lt;span&gt;</option>
+					<option value="p">
+						Paragraph &lt;p&gt;</option>
+					<option value="h1">
+						H1 Tag &lt;h1&gt;</option>
+					<option value="h2">
+						H2 Tag &lt;h2&gt;</option>
+					<option value="h3">
+						H3 Tag &lt;h3&gt;</option>
+					<option value="h4">
+						H4 Tag &lt;h4&gt;</option>
+					<option value="h5">
+						H5 Tag &lt;h5&gt;</option>
+				</field>
+				<field
+					name="mod_desc_align"
+					type="list"
+					default="0"
+					label="Module Description Alignment"
+					description="How do you want the description to be aligned.">
+					<option value="left">
+						Left</option>
+					<option value="center">
+						Center</option>
+					<option value="right">
+						Right</option>
+				</field>
+				<field
+					name="submit_btn_place"
+					type="list"
+					default="left"
+					label="Submit Button Alignment"
+					description="Where do you want the Submit Button to be Located? If you choose 'Right', and want the field to be on the same line, be sure to set the 'Email Field Size' value small enough for the button to fit at the right (on the same line).">
+					<option value="left">
+						Left</option>
+					<option value="right">
+						Right</option>
+				</field>
+			</fieldset>
+			<fieldset
+				name="NEED3" label="COM_MODULES_NEED3_FIELDSET_LABEL">
+				<field
+					name="mod_desc"
+					size="40"
+					type="text"
+					default="Sign up for our newsletter"
+					label="Module Description"
+					description="This text is displayed above the newsletter sign up form." />
+				<field
+					name="show_mod_desc"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="Show Module Description"
+					description="Enable if you would like to show the Module Description Text.">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="email_label_width"
+					size="8"
+					type="text"
+					default="180"
+					label="Label Length (in px)"
+					description="This value will change the default label size. Enter a numeric value (in pixels) that will be used as a css width for the email field." />
+				<field
+					name="css_field_width"
+					size="8"
+					type="text"
+					default=""
+					label="Field Length (in px)"
+					description="(Optional) This value will change the default input field size. Enter a numeric value (in pixels) that will be used as a css width for the email field." />
+				<field
+					name="show_field_text"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="Show Email Field Text"
+					description="Enable if you would like to show default text in the field.">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="email_field_text"
+					size="40"
+					type="text"
+					default="Email Address"
+					label="Email Field Text"
+					description="This text displays in the email field." />
+				<field
+					name="show_label_text"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="Show Email Label Text"
+					description="Enable if you would like to show the field label.">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="email_label"
+					size="40"
+					type="text"
+					default="Email Address:"
+					label="Email Label Text"
+					description="This text displays as the label." />
+				<field
+					name="submit_btn"
+					type="text"
+					default="Join"
+					label="Submit Button Text"
+					description="This text is the label for the submit button." />
+				<field
+					name="confirm_status"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="Confirm Status"
+					description="Select 'YES' to require the contact to confirm their subscription. (Required for CASL Compliance)">
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+				<field
+					name="confirm_field"
+					type="text"
+					default="MOD_CCSIGNUP_MAJIX_CONFIRM_FIELD"
+					showon="confirm_status:1"
+					label="List Field Label&lt;br /&gt;(Optional)"
+					description="This text displays as the label for the checkbox." />
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+    </config>
+	<updateservers>
+		<server type="extension" priority="1" name="JoomLadds Update Site">http://joomladds.com/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=8</server>
+	</updateservers>
+</extension>
+
